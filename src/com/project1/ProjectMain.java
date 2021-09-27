@@ -6,7 +6,7 @@ public class ProjectMain {
 
 	public static void main(String[] args){
 		
-		MenuOptions.printWelcomeScreen("Virtual Key Repository", "Pavithra");
+		MenuOptions.printWelcome("Virtual Key Repository", "Pavithra");
 		handleWelcomeScreenInput();
 	}
 	private static void handleWelcomeScreenInput() {
