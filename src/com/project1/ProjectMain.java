@@ -1,7 +1,7 @@
 package com.project1;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
+//import java.util.ArrayList;
+//import java.util.Collections;
+//import java.util.List;
 import java.util.Scanner;
 
 public class ProjectMain {
@@ -17,28 +17,50 @@ public class ProjectMain {
 		Scanner sc = new Scanner(System.in);
 		
 		do {
-			MenuOptions.displayMenu();
-			int input = sc.nextInt();
+			//MenuOptions.displayMenu();
+			//int input = sc.nextInt();
+			try {
+				MenuOptions.displayMenu();
+				int input = sc.nextInt();
 
-			switch (input) {
+		/*	switch (input) {
 			case 1:
-				// All required files and folders inside main folder relative to current folder
-				//FileOperations.listFilesInDirectory("./main", 0);
-				displayAllFiles();
-				break;
+			displayAllFiles();
+		      break;
 			case 2:
 				MenuOptions.displayFileMenuOptions();
 				break;
+
 			case 3:
-				System.out.println("Program exited successfully.");
+		     System.out.println("Program exited successfully.");
 				System.exit(0);
 				break;
 			default:
 				System.out.println("Please select a valid option from above.");
-			}
+			}*/
+				switch (input) {
+				case 1:
+					FileOperations.displayAllFiles("./main");
+					break;
+				case 2:
+					MenuOptions.handleFileMenuOptions();
+					break;
+				case 3:
+					System.out.println("Program exited successfully.");
+					running = false;
+					sc.close();
+					System.exit(0);
+					break;
+				default:
+					System.out.println("Please select a valid option from above.");
+				}
+			} catch (Exception e) {
+				System.out.println(e.getClass().getName());
+				handleWelcomeScreenInput();
+			} 
 		} while (running == true);
-		
-		sc.close();
+
+	/*	sc.close();
 
 	}
 
@@ -51,6 +73,6 @@ public class ProjectMain {
 		Collections.sort(filesListNames);
 
 		filesListNames.stream()
-				.forEach(System.out::println);
+				.forEach(System.out::println);    */
 	}
 }
