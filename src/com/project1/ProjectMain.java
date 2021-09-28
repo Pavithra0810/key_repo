@@ -1,6 +1,6 @@
 package com.project1;
 
-import java.util.Scanner;
+//import java.util.Scanner;
 
 public class ProjectMain {
 
@@ -9,15 +9,18 @@ public class ProjectMain {
 				FileOperations.createMainFolderIfNotPresent("main");
 		
 		MenuOptions.printWelcome("Virtual Key Repository", "Pavithra");
-		handleWelcomeScreenInput();
+		//handleWelcomeScreenInput();
+		HandleOptions.handleWelcomeScreenInput();
 	}
-	private static void handleWelcomeScreenInput() {
+
+/*	private static void handleWelcomeScreenInput() {
 		boolean running = true;
 		Scanner sc = new Scanner(System.in);
 		do {
 			try {
 				MenuOptions.displayMenu();
 				int input = sc.nextInt();
+
 				switch (input) {
 				case 1:
 					FileOperations.displayAllFiles("main");
@@ -39,5 +42,6 @@ public class ProjectMain {
 				handleWelcomeScreenInput();
 			} 
 		} while (running == true);
-	}
+	}   */
+
 }
