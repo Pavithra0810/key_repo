@@ -5,6 +5,8 @@ import java.util.Scanner;
 public class ProjectMain {
 
 	public static void main(String[] args){
+		// Create "main" folder if not present in current folder structure
+				FileOperations.createMainFolderIfNotPresent("main");
 		
 		MenuOptions.printWelcome("Virtual Key Repository", "Pavithra");
 		handleWelcomeScreenInput();
@@ -16,10 +18,8 @@ public class ProjectMain {
 			try {
 				MenuOptions.displayMenu();
 				int input = sc.nextInt();
-
 				switch (input) {
 				case 1:
-					//FileOperations.displayAllFiles("./main");
 					FileOperations.displayAllFiles("main");
 					break;
 				case 2:
@@ -41,4 +41,3 @@ public class ProjectMain {
 		} while (running == true);
 	}
 }
-	
